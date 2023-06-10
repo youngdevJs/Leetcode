@@ -8,7 +8,7 @@ if(numRows === 1) return s
             res += s.charAt(i+j)
             let isNotFirstRow = i !== 0
             let isNotLastRow = i !== numRows - 1   
-            let betweenMainRow = j + cycle - i < leng
+            let betweenMainRow =  cycle - i  < leng
             if(isNotFirstRow && isNotLastRow && betweenMainRow){
                 res += s.charAt(j + cycle - i)
             }
@@ -17,4 +17,8 @@ if(numRows === 1) return s
     return res
 };
 
-console.log(convert("A",1))
+// A
+// B  D
+// C
+
+console.log(convert("PAYPALISHIRING",4) === "PINALSIGYAHRPI")

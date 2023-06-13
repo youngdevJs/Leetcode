@@ -4,11 +4,11 @@
  */
 var myAtoi = function(s) {
     const len = s.length;
-   let result = 0;
+   let result = "";
    let sign = 1;
    for(let i=0; i<len; i++){
     //    step 1:
-       if(s[i]===' ') continue;
+        s = s.trim()
     //    step 2:
        if(s[i] === '+' || s[i]==='-'){
            sign = s[i] === '-' ? -1 : 1;
@@ -16,7 +16,7 @@ var myAtoi = function(s) {
        }
     //    step 3:
         if(/[0-9]/.test(s[i])){
-            result = result*10 + (+s[i]);
+            result += (+s[i]);
             if(!/[0-9]/.test(s[i+1])) break;
         }
     // break point:
@@ -26,3 +26,7 @@ var myAtoi = function(s) {
    }   
    return sign === -1 ? Math.max(-(2 ** 31), -result) : Math.min(2 ** 31 - 1, result);
 };
+
+console.log(myAtoi("-00000001"))
+
+//  s = "4193 with words"

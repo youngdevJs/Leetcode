@@ -2,9 +2,6 @@ function formingMagicSquare(s) {
   // Write your code here
   let listCost = [];
   for (let i = 1; i <= 9; i++) {
-    if(i === 4) {
-        console.log("debug");
-    }
     let aSquare = [
         [0, 0, 0],
         [0, 5, 0],
